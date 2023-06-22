@@ -18,6 +18,11 @@ GROUP BY rating;
 
 SELECT COUNT(*) AS total_number FROM temp_table; 
 
-SELECT AVG([user rating score]), [release year] FROM temp_table
-WHERE [release year] = 2017 OR [release year] = 2016
+SELECT [release year], AVG([user rating score])  FROM temp_table
+WHERE [release year] = 2015 OR [release year] = 2016
+GROUP BY [release year];
+
+
+SELECT [release year], COUNT(*) FROM temp_table
+WHERE [release year] = 2015 OR [release year] = 2016
 GROUP BY [release year];
